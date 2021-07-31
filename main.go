@@ -11,6 +11,6 @@ func main() {
 		log.Fatal("error when open file ", err)
 	}
 
-	log.SetOutput(file)
-	log.Println("Hello World!")
+	customLog := log.New(file, "", log.Ldate|log.Ltime|log.Lshortfile)
+	customLog.Print("something happened..")
 }
